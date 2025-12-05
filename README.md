@@ -35,4 +35,6 @@ To be learnt with do as you go
 ### Authentication
 - Hashing is taking a simple string like password and useing a hash function to make it into something which cant be reversed , the passwords are checked when user inputs it again the same hash is created for same password string and then compared to the one stored in the DB - One way
 - Encryption is similar to hashing but can be decrypted with the help of a password - two way
+- Basic use of jwt, include it in the top using `require` and then use it to `sign`(encode) and `verify(can't say decode as such but yeah somehing like that
+- `const token = jwt.sign(password,SECRET_KEY)` and `jwt.verify(token, SECRET_KEY, function(err,username){})`
 </details>
