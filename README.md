@@ -1,6 +1,7 @@
 <details>
 <summary>Week 1</summary>
 Learned about the 
+
 - Date[new Date(), getTime,getHours(),getFullYear(), setFullYear()] 
 - JSON[ JSON.parse(), JSON.stringify() ] 
 - Object[ Object.keys() , Object.values(), Object.entries()]
@@ -14,6 +15,7 @@ Learned about the
 <details>
 <summary>Week 2</summary>
 To be learnt with do as you go
+
 - Syntax of async-await, Promises, callback function 
 - resolve() and .then() for promise
 - callback generally has (req,res) and if multiple callbacks are chained together in series then (req,res,next)
@@ -42,6 +44,7 @@ To be learnt with do as you go
 <details>
 <summary>Week 4 - DOM</summary>
 Query Parameters `req.query.a` is a string so any operation that we do on it should be done after parseInt() and the returned response should be `res.send(String(output))`
+
 - How to select elements with tagname, id and addEventListeners like `click`, `change`, `input` like `document.addEventListener('change',function(){})`
 - The CORS issue solved by importing `cors` and then doing `app.use(cors())` for `fetch()` api accessing outside origin, then the response is also a promise which we need to again await and destructure with either `result.text()` or `result.json` 
 </details>
