@@ -38,3 +38,10 @@ To be learnt with do as you go
 - Basic use of jwt, include it in the top using `require` and then use it to `sign`(encode) and `verify(can't say decode as such but yeah somehing like that
 - `const token = jwt.sign(password,SECRET_KEY)` and `jwt.verify(token, SECRET_KEY, function(err,username){})`
 </details>
+
+<details>
+<summary>Week 4 - DOM</summary>
+Query Parameters `req.query.a` is a string so any operation that we do on it should be done after parseInt() and the returned response should be `res.send(String(output))`
+- How to select elements with tagname, id and addEventListeners like `click`, `change`, `input` like `document.addEventListener('change',function(){})`
+- The CORS issue solved by importing `cors` and then doing `app.use(cors())` for `fetch()` api accessing outside origin, then the response is also a promise which we need to again await and destructure with either `result.text()` or `result.json` 
+</details>
