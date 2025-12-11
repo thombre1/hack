@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum</title>
+</head>
+<body>
+    <input type="number" id="firstNumber" placeholder="Enter 1st Number">
+    <input type="number" id="secondNumber" placeholder="Enter 2nd Number">
+    <button id="sumButton">SUM</button>
+    <p id="res"></p>
+    <script>
+        const btn = document.getElementById("sumButton");
+        const res = document.getElementById("res");
+        async function calculate(){
+            const firstNumber = document.getElementById("firstNumber").value;
+            const secondNumber = document.getElementById("secondNumber").value;
+
+            const result = await fetch(`http://localhost:3000/sum?a=${firstNumber}&b=${secondNumber}`);
+            const ans = await result.text();
+            res.innerHTML = ans;
+        }
+        
+        
+        btn.addEventListener('click',calculate);
+
+        // firstNumber.addEventListener('input',calculate);
+        // secondNumber.addEventListener('input',calculate);
+        
+    </script>
+</body>
+</html>
