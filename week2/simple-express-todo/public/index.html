@@ -91,7 +91,7 @@
 			}
 
 			async function updateTodo(todo){
-				await fetch(`${API_URL/${todo.id}`, {
+				await fetch(`${API_URL}/${todo.id}`, {
 					method: "PUT",
 					body: JSON.stringify(todo),
 					headers: {"Content-Type":"application/json"}
