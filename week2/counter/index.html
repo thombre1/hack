@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Auto Counter</title>
+        <style>
+            body{
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+            }
+            .container{
+                position: absolute;
+                left: 50%;
+                top: 30%;
+                transform: translate(-50%,-50%);
+            }
+            .btn{
+                width: 16rem;
+                height: 2rem;
+                cursor: pointer;
+            }
+            .text{
+               display: flex;
+               justify-self: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="element">
+                <button class="btn" id="btn1" onclick="incr()">Start The Timer</button>
+                <p class="text" id="text1"> </p>
+            </div>
+        </div>
+    <script>
+    
+            const text = document.getElementById("text1");
+            const button = document.getElementById("btn1");
+            let flag = true;
+            let myInterval;
+            let count = 0;
+            function incr(){
+                if(flag){
+                    button.innerHTML = "Timer Started!"
+                    function incrementCounter(){
+                    count++;
+                    text.innerHTML = count;
+                    }
+                    flag = false;
+                    myInterval = setInterval(incrementCounter,1000);
+                }
+                else{
+                    button.innerHTML = "Continue the Time"
+                    text.innerHTML = " "
+                    flag = true;
+                    clearInterval(myInterval)
+                }
+            }
+        </script>
+    </body>
+        
+</html>
