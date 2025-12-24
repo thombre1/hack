@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominic</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="task-heading">Tasks from JSON</h1>
+        <button id="update-btn" onclick="updateDom()">Click Me to Update✅</button>
+        <div id="fetch-results">
+
+        </div>
+    </div>
+
+<script>
+    //1. need a function that takes input as a json and destructures it and passes onto a render function
+    //2. write a render function that takes the title,description & id as input and renders it on a dom, with each object having its own Done Button
+    //3. The trigger of done button should trigger a function that takes the id of the task and removes it from the dom
+	let id=0;
+    const fetch_results = document.getElementById("fetch-results");
+	const state = [
+		{
+
+			"title":"Go Pooja",
+			"description":"Ghar ki Pooja at 11am",
+			"id":`${id++}`
+		},
+		{
+			"title":"Go Jevan",
+			"description":"Jevan at 12pm",
+			"id":`${id++}`
+		},
+		{
+			"title":"Go Padhai",
+			"description":"Study in Room till 8pm",
+			"id":`${id++}`
+		},
+        {
+			"title":"Hormozi Podcast",
+			"description":"Watch hormozi podcast while you make wall notes",
+			"id":`${id++}`
+		}
+	]
+    	
+	function createAndReturnChild(title,description,id){
+		
+		const render_div = document.createElement("div")
+		const render_title = document.createElement("div")
+		const render_description = document.createElement("div");
+		const done_button = document.createElement("button");
+
+		render_title.innerHTML = title;
+		render_description.innerHTML = description;
+
+		done_button.innerHTML = `Done with task: ${id}`;
+
+		render_div.setAttribute("id",id);
+		done_button.setAttribute("class","delete-button");
+		done_button.setAttribute("onclick","this.parentElement.remove()");
+		render_div.appendChild(render_title);
+		render_div.appendChild(render_description);
+		render_div.appendChild(done_button);
+
+		return render_div;
+
+
+	}
+
+	function updateDom(){
+	
+        fetch_results.innerHTML = "";
+		for(let i=0;i<state.length;i++){
+
+			const task = createAndReturnChild(state[i].title,state[i].description,state[i].id);
+			const fetch_results = document.getElementById("fetch-results");
+			fetch_results.appendChild(task);
+		}
+
+	}
+
+    //get all button with delete-button class
+    const deleteButtons = document.querySelectorAll('.delete-button');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Select the parent div and call the remove() method directly on it
+
+            this.parentElement.remove();
+        });
+    });
+        	
+</script>
+</body>
+</html>
