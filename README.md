@@ -9,6 +9,12 @@ Learned about the
 - `setTimeout()` is a sync function - that it will be allocated to a separate thread and the sync functions will continue to be executed - while the timeout goes on
 - The idea is that sync functions will go onto stack get executed and async function go to callback queue and wait till all the sync fucntion get executed, then one by one the queue functions get onto stack and executed
 - (Stack fills up if the function calls another function or itself(recursion))
+- String Methods - length, slice(), substring(), replace(), indexOf(), lastIndexOf(), split(), trim(), toUpperCase(), toLowerCase()
+- Array Methods - push(),pop(),shift(),unshift() | splice() vs slice()[cut-paste vs copy-paste]concat(), which i dont think will be much used, forEach() iterator gives an iterator with which we can do anything
+- map() also gets an iterator which can be used to modify the element with new return value it=> it*2 or it=> it+10
+- reduce() has a callback function and initial value(optional) as argument, the callback has two arguments again, accumulator(which stores the value of subsequent operations like sum,diff,mul,divide,xor,bitwise shift if thats even possible in js) and then iterator
+- find() just returns the first occurence of the condition given in its callback, whereas filter gives an array of whatever matches the condition inside the callback
+- sort() sorts things alphabetically by default, give it a callback with (a,b) and its return value as a-b is ascending and b-a as descending - the original array will be changed with sort() 
 </details>
 
 
