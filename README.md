@@ -54,3 +54,14 @@ Query Parameters `req.query.a` is a string so any operation that we do on it sho
 - How to select elements with tagname, id and addEventListeners like `click`, `change`, `input` like `document.addEventListener('change',function(){})`
 - The CORS issue solved by importing `cors` and then doing `app.use(cors())` for `fetch()` api accessing outside origin, then the response is also a promise which we need to again await and destructure with either `result.text()` or `result.json` 
 </details>
+
+
+<details>
+<summary>Week 5 - React</summary>
+- React - mainly `useState()` thingy whose argument is, as the name suggests, takes a state as input for the variable. Common format use I saw was `const [item, setItem] = useState(0)` - if item = 0,1,2 basically an integer
+- or  `const [item, setItem] = useState({title: "New Item", description:"This is something new"})` if item is basically an object
+- the filename is in CAPS and the main function has the file name and generally do `export default File` which can be imported
+- Any function that returns HTML/XML (at this point i am confused) also can take `props` as argument which can be used in the html part of the function with the curly brace syntax `{element}` or `{props.elemnt}` if the props we pass on is an object
+- any JS logic to write in the HTML part is enclosed in the `{}`, most use you will see is `{objectArray.map(element=> return <li>{element.title}</li>)}` being used
+
+</details>
