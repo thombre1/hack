@@ -48,7 +48,7 @@ To be learnt with do as you go
 </details>
 
 <details>
-<summary>Week 4 - DOM</summary>
+<summary>Week 4 - DOM & Mongo</summary>
 Query Parameters `req.query.a` is a string so any operation that we do on it should be done after parseInt() and the returned response should be `res.send(String(output))`
 
 - How to select elements with tagname, id and addEventListeners like `click`, `change`, `input` like `document.addEventListener('change',function(){})`
